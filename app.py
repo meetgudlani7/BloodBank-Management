@@ -6,7 +6,7 @@ app.secret_key="Blood"
 
 @app.route('/')
 def index():
-    return render_template("login.html")
+    return redirect(url_for("login"))
 
 @app.route('/mainpage')
 def mainpage():
@@ -27,7 +27,7 @@ def login():
         else:
             return redirect(url_for("index"))
     else:
-        return redirect(url_for("index"))
+        return render_template("login.html")
     
 @app.route('/signup',methods=["POST","GET"])
 def signup():
