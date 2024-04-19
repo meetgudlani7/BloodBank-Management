@@ -15,7 +15,6 @@ def mainpage():
     else:
         return redirect(url_for("index"))
 
-
 @app.route('/login',methods=["POST","GET"])
 def login():
     if request.method == "POST":
@@ -41,6 +40,34 @@ def signup():
             return redirect(url_for("index"))
     else:
         return redirect(url_for("index"))
+
+@app.route('/donor')
+def donorpage():
+    return render_template("donor.html")
+
+@app.route('/bloodbankregister')
+def bloodbankpage():
+    return render_template("bloodbankregister.html")
+
+@app.route('/hospregister')
+def hospitalpage():
+    return render_template("hospregister.html")
+
+@app.route('/request')
+def requestpage():
+    return render_template("request.html")
+
+@app.route('/howtodonate')
+def howtodonatepage():
+    return render_template("howtodonate.html")
+
+@app.route('/about')
+def aboutpage():
+    return render_template("about.html")
+
+@app.route('/contact')
+def contactpage():
+    return render_template("contact.html")
 
 
 if __name__ == '__main__':
