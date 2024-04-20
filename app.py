@@ -69,6 +69,26 @@ def aboutpage():
 def contactpage():
     return render_template("contact.html")
 
+@app.route('/benefits')
+def benefitspage():
+    return render_template("benefits.html")
+
+@app.route('/donordet')
+def donordet():
+    return render_template("donordet.html")
+
+@app.route('/donorreg')
+def donorregpage():
+    return render_template("donorreg.html")
+
+@app.route('/bloodbankregform')
+def bloodbankregformpage():
+    return render_template("bloodbankregform.html")
+
+@app.route('/hospregform')
+def hospregformpage():
+    return render_template("hospregform.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
