@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOSPITAL REGISTRATION | Blood Bank Data Management Website</title>
+  <link rel="stylesheet" href="../static/donorreg.css">
+  <link rel="icon" href="croplogotitle.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="../static/img/logo.jpg" alt="DONATION DESK | Blood Bank Data Management Website" width="150px" class="centre">
+        </div>
+        <nav>
+          <ul>
+            <li><a class="navback" href="index.html">Home &#10170;</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="layout">
+    <h1>Hospital Registration Form</h1>
+     <h2>Hospital Name</h2>
+     <input type="text" name="first_name" placeholder="First Name">
+
+     <h2>Type</h2>
+     <div class="container">
+         <ul>
+             <li>
+                 <input type="radio" id="private" name="type" value="private">
+                 <label for="private">Private</label>
+                 <div class="check"></div>
+             </li>
+             <li>
+                 <input type="radio" id="government" name="type" value="government">
+                 <label for="government">Government</label>
+                 <div class="check">
+                     <div class="inside"></div>
+                 </div>
+             </li>
+         </ul>
+     </div>
+
+     <h2>Address</h2>
+     <textarea name="address" cols="50" rows="5" placeholder="Enter your address"></textarea>
+
+     <div class="btn"><input type="button" name="button" value="Submit"></div>
+     
+ </div>
+</body>
+</html>
