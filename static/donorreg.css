@@ -1,8 +1,8 @@
 body {
-  background-color: red;
+  background-color: rgb(182, 105, 105);
   background-attachment: fixed;
   background-repeat: repeat;
-  background-color: cadetblue;
+  
 }
 
 .layout {
