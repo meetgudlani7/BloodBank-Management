@@ -53,9 +53,16 @@ def bloodbankpage():
 def hospitalpage():
     return render_template("hospregister.html")
 
-@app.route('/request')
+@app.route('/request',methods=["POST","GET"])
 def requestpage():
-    return render_template("request.html")
+    if request.method == "POST":
+        name = request.form["name"]
+        bloodgroup = request.form["bloodgroup"]
+        hospid = request.form["hospid"]
+        bankid = request.form["bankid"]
+        addPatient(name, bloodgroup, hospid, bankid)
+        return redirect(url_for("mainpage"))
+    return render_template("request.html",hosps = getHosp(), banks = getBBank())
 
 @app.route('/howtodonate')
 def howtodonatepage():
@@ -77,16 +84,37 @@ def benefitspage():
 def donordet():
     return render_template("donordet.html")
 
-@app.route('/donorreg')
+@app.route('/donorreg',methods=["POST","GET"])
 def donorregpage():
-    return render_template("donorreg.html")
+    if request.method == "POST":
+        name = request.form["name"]
+        gender = request.form["gender"]
+        address = request.form["address"]
+        pno = request.form["phone_number"]
+        weight = request.form["weight"]
+        dob = request.form["dob"]
+        docid = request.form["docid"]
+        adddonor(name,gender,address,pno,weight,dob,docid)
+        return redirect(url_for("donorpage"))
+    return render_template("donorreg.html",docs = getDocs())
 
-@app.route('/bloodbankregform')
+@app.route('/bloodbankregform',methods=["POST","GET"])
 def bloodbankregformpage():
+    if request.method == "POST":
+        name = request.form["name"]
+        address = request.form["address"]
+        addBloodBank(name,address)
+        return redirect(url_for("bloodbankpage"))
     return render_template("bloodbankregform.html")
 
-@app.route('/hospregform')
+@app.route('/hospregform',methods=["POST","GET"])
 def hospregformpage():
+    if request.method == "POST":
+        name = request.form["name"]
+        address = request.form["address"]
+        mode = request.form["mode"]
+        addhospital(name,address,mode)
+        return redirect(url_for("hospitalpage"))
     return render_template("hospregform.html")
 
 

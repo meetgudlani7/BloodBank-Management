@@ -1,0 +1,103 @@
+CREATE DATABASE PROJECT;
+USE PROJECT;
+
+CREATE TABLE hospital (
+    H_id INT AUTO_INCREMENT PRIMARY KEY,
+    H_name VARCHAR(255),
+    H_add VARCHAR(255)
+);
+
+CREATE TABLE doctor (
+    Doc_id INT AUTO_INCREMENT PRIMARY KEY,
+    Doc_name VARCHAR(255),
+    Doc_add VARCHAR(255),
+    H_id INT,
+    FOREIGN KEY (H_id) REFERENCES hospital(H_id)
+);
+ALTER TABLE hospital ADD mode CHAR(1);
+
+CREATE TABLE donor (
+    Do_id INT AUTO_INCREMENT PRIMARY KEY,
+    Do_name VARCHAR(255),
+    Do_address VARCHAR(255),
+    Do_gender CHAR(1),
+    Do_DOB DATE,
+    Do_weight DECIMAL(5,2),
+    Do_Phno VARCHAR(15),
+    Doc_id INT,
+    FOREIGN KEY (Doc_id) REFERENCES doctor(Doc_id)
+);
+
+CREATE TABLE bloodbank (
+    Bank_id INT AUTO_INCREMENT PRIMARY KEY,
+    Bank_name VARCHAR(255),
+    Bank_add VARCHAR(255)
+);
+
+CREATE TABLE blood (
+    Do_id INT,
+    FOREIGN KEY (Do_id) REFERENCES donor(Do_id),
+    Bloodgroup VARCHAR(5),
+    Bank_id INT,
+    FOREIGN KEY (Bank_id) REFERENCES bloodbank(Bank_id)
+);
+
+CREATE TABLE patient (
+    P_id INT AUTO_INCREMENT PRIMARY KEY,
+    P_name VARCHAR(255),
+    P_bloodgroup VARCHAR(5),
+    H_id INT,
+    FOREIGN KEY (H_id) REFERENCES hospital(H_id),
+    Bank_id INT,
+    FOREIGN KEY (Bank_id) REFERENCES bloodbank(Bank_id)
+);
+
+CREATE TABLE userdata(
+email VARCHAR(100) PRIMARY KEY,
+name VARCHAR(100),
+pass VARCHAR(100)
+);
+
+-- Synthetic data insertion statements
+
+INSERT INTO hospital (H_id, H_name, H_add) VALUES
+(1, 'Apollo Hospital', 'Jubilee Hills, Hyderabad, Telangana'),
+(2, 'Fortis Hospital', 'Sector 62, Phase - VIII, Mohali, Punjab'),
+(3, 'AIIMS', 'Sri Aurobindo Marg, Ansari Nagar, New Delhi'),
+(4, 'Lilavati Hospital', 'A - 791, Bandra Reclamation, Bandra West, Mumbai, Maharashtra'),
+(5, 'Narayana Health City', '258/A, Bommasandra Industrial Area, Anekal Taluk, Hosur Road, Bengaluru, Karnataka');
+
+INSERT INTO doctor (Doc_id, Doc_name, Doc_add, H_id) VALUES
+(1, 'Dr. Rajesh Sharma', '1st Floor, Apollo Hospital, Jubilee Hills, Hyderabad, Telangana', 1),
+(2, 'Dr. Preeti Singh', 'Fortis Hospital, Sector 62, Phase - VIII, Mohali, Punjab', 2),
+(3, 'Dr. Anil Kumar', 'AIIMS, Sri Aurobindo Marg, Ansari Nagar, New Delhi', 3),
+(4, 'Dr. Meera Patel', 'Lilavati Hospital, A - 791, Bandra Reclamation, Bandra West, Mumbai, Maharashtra', 4),
+(5, 'Dr. Arjun Reddy', 'Narayana Health City, 258/A, Bommasandra Industrial Area, Anekal Taluk, Hosur Road, Bengaluru, Karnataka', 5);
+
+INSERT INTO bloodbank (Bank_id, Bank_name, Bank_add) VALUES
+(1, 'Red Cross Blood Bank', 'National Headquarters, 1, Tughlakabad Institutional Area, Mehrauli Badarpur Road, New Delhi'),
+(2, 'Rotary Blood Bank', 'Sir Ganga Ram Hospital, Rajinder Nagar, New Delhi'),
+(3, 'Lions Blood Bank', 'Moolchand Medcity, Lajpat Nagar III, New Delhi'),
+(4, 'Jeevan Jyoti Blood Bank', 'Dwarka, Sector 6, Delhi'),
+(5, 'Indira Gandhi Blood Bank', 'Raj Nagar, Sector 6, Ghaziabad, Uttar Pradesh');
+
+INSERT INTO donor (Do_id, Do_name, Do_address, Do_gender, Do_DOB, Do_weight, Do_Phno, Doc_id) VALUES
+(1, 'Rahul Kumar', '123 ABC Street, Hyderabad, Telangana', 'M', '1990-05-15', 70.5, '9876543210', 1),
+(2, 'Priya Sharma', '456 XYZ Street, Mohali, Punjab', 'F', '1995-08-22', 60.2, '9876543211', 2),
+(3, 'Amit Singh', '789 PQR Street, New Delhi', 'M', '1988-11-30', 80.0, '9876543212', 3),
+(4, 'Kavita Patel', '321 LMN Street, Mumbai, Maharashtra', 'F', '1992-03-10', 55.8, '9876543213', 4),
+(5, 'Anil Reddy', '654 RST Street, Bengaluru, Karnataka', 'M', '1998-07-05', 65.5, '9876543214', 5);
+
+INSERT INTO blood (Do_id, Bloodgroup, Bank_id) VALUES
+(1, 'O+', 1),
+(2, 'A-', 2),
+(3, 'B+', 3),
+(4, 'AB-', 4),
+(5, 'O+', 5);
+
+INSERT INTO patient (P_id, P_name, P_bloodgroup, H_id, Bank_id) VALUES
+(1, 'Ramesh Gupta', 'A+', 3, 1),
+(2, 'Sunita Verma', 'B-', 2, 2),
+(3, 'Rajesh Kumar', 'O+', 5, 3),
+(4, 'Priya Singh', 'AB+', 4, 4),
+(5, 'Anita Sharma', 'A-', 1, 5);

@@ -21,30 +21,29 @@
         </div>
         <nav>
           <ul>
-            <li><a class="navback" href="index.html">Home &#10170;</a></li>
+            <li><a class="navback" href="mainpage">Home &#10170;</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </div>
   <div class="layout">
+    <form action="/donorreg" method="post">
     <h1>Donor Registration Form</h1>
-     <h2>First Name</h2>
-     <input type="text" name="first_name" placeholder="First Name">
-     
-     <h2>Last Name</h2>
-     <input type="text" name="last_name" placeholder="Last Name">
-     
+
+     <h2>Name</h2>
+     <input type="text" name="name" placeholder="Name">
+        
      <h2>Gender</h2>
      <div class="container">
          <ul>
              <li>
-                 <input type="radio" id="male" name="gender" value="male">
+                 <input type="radio" id="male" name="gender" value="M">
                  <label for="male">Male</label>
                  <div class="check"></div>
              </li>
              <li>
-                 <input type="radio" id="female" name="gender" value="female">
+                 <input type="radio" id="female" name="gender" value="F">
                  <label for="female">Female</label>
                  <div class="check">
                      <div class="inside"></div>
@@ -56,22 +55,23 @@
      <h2>Address</h2>
      <textarea name="address" cols="50" rows="5" placeholder="Enter your address"></textarea>
 
-     <h2>Blood Pressure</h2>
-     <input type="text" name="blood_pressure" placeholder="Blood Pressure">
-
      <h2>Phone Number</h2>
      <input type="tel" name="phone_number" placeholder="Phone Number">
 
      <h2>Weight</h2>
      <input type="text" name="weight" placeholder="Weight">
 
-     <h2>Iron Content</h2>
-     <input type="text" name="iron_content" placeholder="Iron Content">
-
      <h2>Date of Birth</h2>
      <input type="date" name="dob">
 
-     <div class="btn"><input type="button" name="button" value="Submit"></div>
+     <h2>Select Doctor</h2>
+     <select name="docid" id="">
+      {% for doc in docs %}
+        <option value="{{doc[0]}}">{{doc[1]}}</option>
+      {% endfor %}
+     </select>
+     <div class="btn"><input type="submit" name="button" value="Submit"></div>
+    </form>
      
  </div>
 </body>

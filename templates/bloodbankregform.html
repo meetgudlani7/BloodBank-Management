@@ -21,20 +21,23 @@
         </div>
         <nav>
           <ul>
-            <li><a class="navback" href="index.html">Home &#10170;</a></li>
+            <li><a class="navback" href="mainpage">Home &#10170;</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </div>
   <div class="layout">
+    <form action="/bloodbankregform" method="post">
     <h1>Blood Bank Registration Form</h1>
      <h2>Blood Bank Name</h2>
-     <input type="text" name="first_name" placeholder="First Name">
+     <input type="text" name="name" placeholder="Blood Bank Name">
 
      <h2>Blood Bank Address</h2>
      <textarea name="address" cols="50" rows="5" placeholder="Enter your address"></textarea>
-
+     
+    <input type="submit" value="Submit">
+    </form>
  </div>
 </body>
 </html>
