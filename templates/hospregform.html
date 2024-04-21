@@ -13,23 +13,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="header">
-    <div class="container">
-      <div class="navbar">
-        <div class="logo">
-          <img src="../static/img/logo.jpg" alt="DONATION DESK | Blood Bank Data Management Website" width="150px" class="centre">
-        </div>
-        <nav>
-          <ul>
-            <li><a class="navback" href="mainpage">Home &#10170;</a></li>
-          </ul>
-        </nav>
-      </div>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../static/img/logoblend.jpg" alt="DONATION DESK | Blood Bank Data Management Website" width="150px" class="centre">
     </div>
+    <nav>
+      <ul>
+        <li><a href="mainpage">Home</a></li>
+      </ul>
+    </nav>
+    <img src="../static/img/profile-modified.png" width="35px" height="35px">
   </div>
   <div class="layout">
     <form action="/hospregform" method="post">
-    <h1>Hospital Registration Form</h1>
+    <h1 style="color: black;">Hospital Registration Form</h1>
      <h2>Hospital Name</h2>
      <input type="text" name="name" placeholder="Name">
 
@@ -38,12 +35,12 @@
          <ul>
              <li>
                  <input type="radio" id="private" name="mode" value="P">
-                 <label for="private">Private</label>
+                 <label for="private" style="color: black;">Private</label>
                  <div class="check"></div>
              </li>
              <li>
                  <input type="radio" id="government" name="mode" value="G">
-                 <label for="government">Government</label>
+                 <label for="government" style="color: black;">Government</label>
                  <div class="check">
                      <div class="inside"></div>
                  </div>

@@ -13,19 +13,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="header">
-    <div class="container">
-      <div class="navbar">
-        <div class="logo">
-          <img src="../static/img/logo.jpg" alt="DONATION DESK | Blood Bank Data Management Website" width="150px" class="centre">
-        </div>
-        <nav>
-          <ul>
-            <li><a class="navback" href="mainpage">Home &#10170;</a></li>
-          </ul>
-        </nav>
-      </div>
+  <div class="navbar">
+    <div class="logo">
+      <img src="../static/img/logoblend.jpg" alt="DONATION DESK | Blood Bank Data Management Website" width="150px" class="centre">
     </div>
+    <nav>
+      <ul>
+        <li><a href="mainpage">Home</a></li>
+      </ul>
+    </nav>
+    <img src="../static/img/profile-modified.png" width="35px" height="35px">
   </div>
   <div class="layout">
     <form action="/donorreg" method="post">
@@ -39,12 +36,12 @@
          <ul>
              <li>
                  <input type="radio" id="male" name="gender" value="M">
-                 <label for="male">Male</label>
+                 <label for="male" class="label">Male</label>
                  <div class="check"></div>
              </li>
              <li>
                  <input type="radio" id="female" name="gender" value="F">
-                 <label for="female">Female</label>
+                 <label for="female" class="label">Female</label>
                  <div class="check">
                      <div class="inside"></div>
                  </div>

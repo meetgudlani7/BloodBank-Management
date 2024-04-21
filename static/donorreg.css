@@ -1,5 +1,5 @@
 body {
-  background-color: #8b0000; 
+  background-color: white; 
   background-attachment: fixed;
   background-repeat: repeat;
 }
@@ -9,12 +9,12 @@ body {
   margin: 33px auto;
   padding-left: 75px;
   overflow: hidden;
-  background-color: #3e4444;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
   display: block;
 }
 
 h2 {
-  color: #aaaaaa;
+  color: black;
 }
 
 h1 {
@@ -32,13 +32,14 @@ textarea {
   border: 3.5px solid #f18973;
   background-color: #e0e2e4;
   font-size: 18px;
-  color: #454140;
+  color: black;
   font-weight: bold;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
+input[type="date"]:placeholder-shown,
 textarea:focus {
   outline: none;
   border-color: #6ebe44;
@@ -47,6 +48,7 @@ textarea:focus {
 input[type="text"]:placeholder-shown,
 input[type="email"]:placeholder-shown,
 input[type="tel"]:placeholder-shown,
+input[type="date"]:placeholder-shown,
 textarea {
   font-size: 16px;
   font-weight: bold;
@@ -186,4 +188,48 @@ input[type=radio]:checked~label {
 
 .navback:hover {
   background: #3d85c6; 
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  left: 20px;
+  padding: 20px;
+  background: rgb(220,20,60);
+}
+nav{
+  flex: 1;
+  text-align: right;
+}
+nav ul{
+  display: list-item;
+  list-style-type: none;
+}
+nav ul li{
+  display: inline-block;
+  margin-right: 50px;
+}
+.active, nav ul li:hover
+{
+  background:#692a2a;
+  padding: 10px 10px;
+  border-radius: 2px;
+  color:black; 
+}
+
+.label{
+  color: black;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
 }

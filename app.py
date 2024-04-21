@@ -117,6 +117,12 @@ def hospregformpage():
         return redirect(url_for("hospitalpage"))
     return render_template("hospregform.html")
 
+@app.route('/logout')
+def logout():
+    if "user" in session:
+        session.pop("user",None)
+    return redirect(url_for("index"))
+
 
 if __name__ == '__main__':
     app.run(debug=True)

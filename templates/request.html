@@ -7,16 +7,17 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
+  
   <div class="container">
     <div class="title">Blood Request for Patient</div>
     <div class="content">
       <form method="POST" action="/request">
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Patient Name</span>
+            Patient Name:
             <input type="text" placeholder="Enter Patient's name" name="name" required>
           </div>
-    
+          <br>
           <div class="input-box">
             Enter Required BloodGroup
           <select name="bloodgroup">
@@ -34,7 +35,7 @@
             <option value="O-">O-</option>
         </select>
       </div>
-
+      <br>
 
       <div class="input-box">
           Select Patient's Hospital:
@@ -44,7 +45,7 @@
             {% endfor %}
            </select>
       </div>
-
+      <br>
         <div class="input-box">
           <span class="details">Select BloodBank</span>
           <select name="bankid" id="">
@@ -53,14 +54,15 @@
             {% endfor %}
            </select>
         </div>
-      
+      <br>
           
         <div class="button">
           <input type="submit" value="Send Request">
         </div>
       </div>
       </form>
-    </div>
+      <li><a href="mainpage">Home</a></li>
+      
   </div>
 
 </body>
